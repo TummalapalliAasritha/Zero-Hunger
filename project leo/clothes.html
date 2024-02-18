@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clothes Donation Form</title>
+<link rel="stylesheet" href="food.css"> <!-- You can link to your CSS file for styling -->
+<script src="notification.js"></script>
+</head>
+<body>
+
+<h2>Clothes Donation Form</h2>
+
+<form action="donation_process.php" method="post">
+  <div class="form-group">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+  <div class="form-group">
+    <label for="clothing">Clothing Item(s) to Donate:</label>
+    <textarea id="clothing" name="clothing" rows="4" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity" name="quantity" required>
+  </div>
+  <div class="form-group">
+    <button type="submit" onclick="showNotification()"><a href="display.html">Donation</a></button>
+  </div>
+</form>
+
+</body>
+</html>

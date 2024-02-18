@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="stylesss.css">
+</head>
+<body>
+
+    <div class="container">
+        <form id="loginForm" onsubmit="validateLogin(); return false;">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit"> <a href="index.html">Login</a></button>
+           <center><h4>If account not exists <a href="register.html">Sign Up</a></h4></center>
+        </form>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="container">
+        <h1>Volunteer Login</h1>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="login()"><a href="index.html">Login</a></button>
+            <center><h4>If account not exists <a href="validregister.html">Sign Up</a></h4></center>
+        </form>
+    </div>
+
+    <script src="script.js">
+        function login() {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+    // Send login credentials to the server for authentication
+    fetch('http://your-server-endpoint/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email, password: password }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Login successful!');
+            // Redirect the user to the dashboard or another page
+            window.location.href = 'dashboard.html';
+        } else {
+            alert('Invalid email or password. Please try again.');
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+}
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

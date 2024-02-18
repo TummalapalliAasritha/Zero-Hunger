@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="food.css">
+<script src="notification.js"></script>
+    <title>food</title>
+</head>
+<body>
+<h2>Food Donation Form</h2>
+
+<form action="donation_process.php" method="post">
+  <div class="form-group">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+  <div class="form-group">
+    <label for="Location">Location:</label>
+    <input type="Location" id="Location" name="Location" required>
+  </div>
+  <div class="form-group">
+    <label for="food">Food Item(s) to Donate:</label>
+    <textarea id="food" name="food" rows="4" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity" name="quantity" required>
+  </div>
+  <div class="form-group">
+    <label for="expiry">Expiry Date:</label>
+    <input type="date" id="expiry" name="expiry" required>
+  </div>
+  <div class="form-group">
+    <button type="submit" onclick="shownotification()"><a href="display.html">Submit Donation</a></button>
+  </div>
+</form>
+
+</body>
+</html>
